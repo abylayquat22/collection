@@ -1,14 +1,15 @@
-//Iterator. Использовать при работе с потоками или не коллекция не поддерживает for each.
-//Особенности:
-//- Во время итерации обнаруживает изменения в коллекции. (for each нет)
-//- Соблюдение контракта. hasNext(), next(), remove()
-//
-//Коллекции. (Динамические массивы)
-//Iterable - базовый интерфейс. Используется для создания кастомных коллекции.
+Iterator. Использовать при работе с потоками или когда коллекция не поддерживает for each.
 
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+Особенности:
+- Во время итерации обнаруживает изменения в коллекции. (for each нет)
+- Соблюдение контракта. hasNext(), next(), remove()
 
+Коллекции. (Динамические массивы)
+Iterable - базовый интерфейс. Используется для создания кастомных коллекции.
+
+Пример:
+
+```
 public class KuatCollection<T> implements Iterable<T> {
 
   private Object[] elements = new Object[2];
@@ -54,3 +55,4 @@ public class KuatCollection<T> implements Iterable<T> {
   }
 
 }
+```
